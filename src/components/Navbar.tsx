@@ -1,29 +1,16 @@
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Button, Flex, useColorMode } from "@chakra-ui/react";
-import { motion, useAnimation } from "framer-motion";
+import { Button, Flex } from "@chakra-ui/react";
 import NextLink from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import NavbarLink from "./NavbarLink";
 import { NavbarSublinkProps } from "./NavbarSublink";
+import ToggleThemeButton from "./ToggleThemeButton";
 
 export interface NavbarProps {
   items?: { label: string; href?: string; subItems?: NavbarSublinkProps[] }[];
 }
 
 const Navbar: React.FC<NavbarProps> = ({ items }) => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const animation = useAnimation();
-  const [angle, setAngle] = useState(360);
   const spacing = "20px";
-
-  const animateColorModeIcon = async () => {
-    await animation.start({
-      rotate: angle,
-      transition: { duration: 0.5 },
-      type: "spring",
-    });
-    setAngle(angle === Number.MAX_SAFE_INTEGER ? 0 : angle + 360);
-  };
 
   return (
     <Flex justifyContent="space-between" alignItems="center" padding={spacing}>
@@ -40,17 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
         })}
       </Flex>
       <Flex gap={spacing}>
-        <Button
-          onClick={() => {
-            toggleColorMode();
-            animateColorModeIcon();
-          }}
-          variant={"ghost"}
-        >
-          <motion.div animate={animation}>
-            {colorMode == "light" ? <MoonIcon /> : <SunIcon />}
-          </motion.div>
-        </Button>
+        <ToggleThemeButton variant={"ghost"} />
         <NextLink href={"#"}>
           <Button variant={"ghost"}>Sign in</Button>
         </NextLink>
