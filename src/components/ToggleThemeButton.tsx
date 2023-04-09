@@ -42,6 +42,7 @@ const ToggleThemeButton: React.FC<ToggleThemeButtonProps> = ({
           animateColorModeIcon();
         }
       }}
+      data-testid="toggle-theme-btn"
       {...props}
     >
       {animate ? (
