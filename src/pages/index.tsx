@@ -59,7 +59,7 @@ const Home: React.FC = () => {
                 </Text>
               </Box>
               <Flex justifyContent={"flex-end"}>
-                <NextLink href={"#"}>
+                <NextLink href={"signup"}>
                   <Button
                     colorScheme={"accent"}
                     rightIcon={<ArrowForwardIcon />}

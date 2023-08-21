@@ -1,6 +1,19 @@
 import { baseTheme, extendTheme, ThemeOverride } from "@chakra-ui/react";
 
 const theme: ThemeOverride = {
+  components: {
+    Link: {
+      variants: {
+        primary: ({ colorScheme = "primary" }) => ({
+          color: `${colorScheme}.200`,
+          _hover: {
+            color: `accent.400`,
+          },
+        }),
+      },
+      defaultProps: { variant: "primary" },
+    },
+  },
   config: {
     initialColorMode: "system",
     useSystemColorMode: true,

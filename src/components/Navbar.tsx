@@ -28,10 +28,10 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
       </Flex>
       <Flex gap={spacing}>
         <ToggleThemeButton variant={"ghost"} />
-        <NextLink href={"#"}>
+        <NextLink href={"signin"}>
           <Button variant={"ghost"}>Sign in</Button>
         </NextLink>
-        <NextLink href={"#"}>
+        <NextLink href={"signup"}>
           <Button colorScheme={"accent"}>Sign up</Button>
         </NextLink>
       </Flex>
