@@ -7,6 +7,7 @@ import {
   Heading,
   Image,
   Link,
+  Show,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -26,24 +27,26 @@ const Home: React.FC = () => {
           height={"100%"}
           gap={"40px"}
         >
-          <Flex height={"100%"} alignItems={"center"} gap={"10px"}>
-            <Link
-              style={{ writingMode: "vertical-lr", rotate: "180deg" }}
-              fontSize={"small"}
-              textAlign={"center"}
-              target={"_blank"}
-              userSelect={"none"}
-              href="https://www.freepik.com/free-vector/people-work-study-home_28261593.htm"
-            >
-              Image by upklyak on Freepik
-            </Link>
-            <Image
-              src={"images/guy-using-laptop.svg"}
-              minH={"40%"}
-              maxH={"80%"}
-            />
-          </Flex>
-          <Box maxW={"40%"}>
+          <Show above="md">
+            <Flex height={"100%"} alignItems={"center"} gap={"10px"}>
+              <Link
+                style={{ writingMode: "vertical-lr", rotate: "180deg" }}
+                fontSize={"small"}
+                textAlign={"center"}
+                target={"_blank"}
+                userSelect={"none"}
+                href="https://www.freepik.com/free-vector/people-work-study-home_28261593.htm"
+              >
+                Image by upklyak on Freepik
+              </Link>
+              <Image
+                src={"images/guy-using-laptop.svg"}
+                minH={"40%"}
+                maxH={"80%"}
+              />
+            </Flex>
+          </Show>
+          <Box maxW={{ base: "60%", md: "40%" }}>
             <Stack gap={"20px"}>
               <Box>
                 <Heading fontSize={{ sm: "5xl" }}>
